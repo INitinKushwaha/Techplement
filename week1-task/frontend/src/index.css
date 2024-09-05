@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Full-page background animation */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, white, black, white, black, white, black);
+    background-size: 500% 400%;
+    animation: gradientAnimation 8s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .content-wrapper {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    background: linear-gradient(45deg, white, black, white, black, white, black);  /* Semi-transparent */
+    padding: 20px;
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(214, 24, 24, 0.1);
+  }
+  
+  /* Title Styling */
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Search Bar */
+  input[type="text"] {
+    width: 85%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #3498db;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  button.fetch-quote-button {
+    background-color: #1111ba;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  button.fetch-quote-button:hover {
+    background-color: #2980b9;
+  }
+  button.search:hover {
+    background-color: #2980b9;
+  }
+  button.search {
+    background-color: #1111ba;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+  
+  /* Quote Card Styling */
+  
+.quote-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    animation: fadeIn 0.8s ease;
+    position: relative;
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  }
+  
+  .quote-card:hover {
+    transform: rotateY(20deg) skewY(-3deg) translateZ(10px); /* 3D effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .quote-card p {
+    font-size: 1.5rem;
+    font-weight: italic;
+    color: #2c3e50;
+  }
+  
+ 
+  
+  
+  .quote-card .author {
+    text-align: right;
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Error and Loading Messages */
+  .loading, .error {
+    color: #e74c3c;
+    font-size: 1.2rem;
+  }
+  
+  /* Author Quotes Section */
+  .author-quotes h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #34495e;
+  }
+  
+
+  
+
+ 
+
+  
+
+
+  
+
+  
