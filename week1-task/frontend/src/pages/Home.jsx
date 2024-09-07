@@ -14,7 +14,7 @@ const Home = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('http://localhost:5000/api/quotes/random');
+      const response = await axios.get('https://quotebackend-7280.onrender.com/api/quotes/random');
       setQuote(response.data);
       setAuthorQuotes([]);
     } catch (err) {
@@ -32,7 +32,7 @@ const Home = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`http://localhost:5000/api/quotes/author/${author}`);
+      const response = await axios.get(`https://quotebackend-7280.onrender.com/api/quotes/author/${author}`);
       setAuthorQuotes(response.data);
       setQuote(null);
     } catch (err) {
