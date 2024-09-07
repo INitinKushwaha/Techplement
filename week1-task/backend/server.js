@@ -10,7 +10,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'https://techplement-2mx3.vercel.app/'
 }));
 
 app.use('/api/quotes', quoteRoutes);
