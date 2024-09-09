@@ -27,14 +27,21 @@ router.get('/random', async (req, res) => {
 // Get quotes by author
 router.get('/author/:author', async (req, res) => {
   try {
-    const quotes = await Quote.find({ author: req.params.author });
+    // Create a regular expression to search for the author name in any position (first or last name) and make it case-insensitive
+    const authorRegex = new RegExp(req.params.author, 'i');
+
+    // Find quotes where the author field matches the regular expression
+    const quotes = await Quote.find({ author: authorRegex });
+
     if (quotes.length === 0) {
       return res.status(404).json({ message: 'No quotes found for this author' });
     }
+
     res.json(quotes);
   } catch (err) {
     res.status(500).json({ message: 'Error fetching quotes' });
   }
 });
+
 
 module.exports = router;
